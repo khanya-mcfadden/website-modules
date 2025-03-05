@@ -17,17 +17,18 @@
 </div>
 
 <!-- seasonal advice containers -->
-
+<div id="ai-response" class="ai-response" style="font-size: larger"></div>
   <!-- ai -->
   <div class="container" style="height: auto; width: 50%; background-color: #fff;">
     <h2>questions chat bot</h2>
     <div id="loading" style="display: none; text-align: center;">
       <p>Loading...</p>
     </div>
-    <div id="ai-response" class="ai-response" style="font-size: larger"></div>
-    <input type="text" id="ai-question" placeholder="Ask a question..." style="bottom: 0;" />
+   
+    <form action="/Ai_data", method="post">
+      <input type="text" id="ai-question" name="ai-question"placeholder="Ask a question..." style="bottom: 0;" />
 
-    <button type="submit" style="padding: 10px;">Ask</button>
+      <button type="submit" style="padding: 10px;">Ask</button>
 
   </div>
 </div>

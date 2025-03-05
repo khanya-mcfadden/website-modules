@@ -1,6 +1,3 @@
-from datetime import datetime, timedelta
-import os
-import sqlite3
 from flask import (
     Flask,
     request,
@@ -38,6 +35,8 @@ def get_Ai():
             },
         ]
     )
+
+    # ai-question = request.form["ai-question"]
 
     data = request.get_json()
     question = data.get("question")
