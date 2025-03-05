@@ -1,5 +1,14 @@
-@app.route("/")
+import google.generativeai as genai
+from flask import render_template
 
+
+
+
+
+
+@app.route("/")
+def index():
+    return render_template("index.html")
 
 
 app = Flask(__name__)
