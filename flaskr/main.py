@@ -93,7 +93,7 @@ def get_Ai():
         return jsonify(
             {
                 "response1": "Sorry, I can only talk about animals.",
-                "response2": "",
+           
             }
         )
 if __name__ == "__main__":
