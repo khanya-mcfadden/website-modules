@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>{% block title %}Home Page{% endblock %}</title>
+  <link rel="stylesheet" href="/static/main.css" />
+
+</head>
+
+
+<div class="container" style="height: auto; width: 50%; background-color: #fff;">
+    <h2>questions chat bot</h2>
+    <div id="loading" style="display: none; text-align: center;">
+      <p>Loading...</p>
+    </div>
+    <div id="ai-response" class="ai-response" style="font-size: larger"></div>
+    <input type="text" id="ai-question" placeholder="Ask a question..." style="bottom: 0;" />
+
+    <button type="submit" style="padding: 10px;">Ask</button>
+
+  </div>
+</div>
