@@ -1,5 +1,13 @@
+from datetime import datetime, timedelta
+import os
+import sqlite3
+from flask import (
+    Flask,
+    request,
+    jsonify,
+    render_template,
+)
 import google.generativeai as genai
-from flask import render_template
 
 
 
@@ -16,8 +24,7 @@ app.secret_key = "1mads"
 
 @app.route("/Ai_data", methods=["POST"])
 def get_Ai():
-    import google.generativeai as genai
-    from flask import request, jsonify
+
 
     genai.configure(api_key="AIzaSyCVadfEkISEXbfrKKWoXBgz2sCbFxMjLPY")
 
@@ -41,6 +48,35 @@ def get_Ai():
     # Function to check if the response is related to weather or health
     def is_relevant_response(response):
         animal_keywords = [
+            "animal",
+            "pet",
+            "dog",  
+            "cat",
+            "bird",
+            "fish",
+            "reptile",
+            "mammal",
+            "insect",
+            "wildlife",
+            "zoo",
+            "aquarium",
+            "vet",
+            "veterinarian",
+            "animal shelter",
+            "animal rescue",
+            "animal welfare",
+            "animal rights",
+            "animal protection",
+            "animal conservation",
+            "animal behavior",
+            "animal training",
+            "animal care",
+            "animal nutrition",
+            "animal health",
+            "animal diseases",
+            "animal medicine",
+            "animal surgery",
+            "animal reproduction",
             "health",
             
         ]
@@ -56,7 +92,7 @@ def get_Ai():
     else:
         return jsonify(
             {
-                "response1": "Sorry, I can only talk about weather or health.",
+                "response1": "Sorry, I can only talk about animals.",
                 "response2": "",
             }
         )
