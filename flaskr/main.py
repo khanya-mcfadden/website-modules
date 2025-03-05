@@ -10,7 +10,8 @@ from flask import (
 import google.generativeai as genai
 
 
-
+app = Flask(__name__)
+app.secret_key = "1mads"
 
 
 
@@ -19,14 +20,13 @@ def index():
     return render_template("index.html")
 
 
-app = Flask(__name__)
-app.secret_key = "1mads"
+
 
 @app.route("/Ai_data", methods=["POST"])
 def get_Ai():
 
 
-    genai.configure(api_key="AIzaSyCVadfEkISEXbfrKKWoXBgz2sCbFxMjLPY")
+    genai.configure(api_key="AIzaSyDC8TaqSgpDw2Emfkd7-1njplpLgd5dRxI")
 
     model = genai.GenerativeModel("gemini-1.5-flash")
     chat = model.start_chat(
@@ -96,3 +96,5 @@ def get_Ai():
                 "response2": "",
             }
         )
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0")
