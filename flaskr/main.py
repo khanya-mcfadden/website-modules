@@ -83,17 +83,22 @@ def get_Ai():
 
     # Filter the response
     if is_relevant_response(response_text):
-        return jsonify(
-            {
-                "response1": response_text,
-            }
-        )
-    else:
-        return jsonify(
-            {
-                "response1": "Sorry, I can only talk about animals.",
-           
-            }
-        )
+        # Check if the question specifies a longer response
+        if "detailed" in question.lower() or "long" in question.lower():
+            return jsonify(
+                {
+                    "response1": response_text,
+                }
+            )
+        else:
+            # Return a few short sentences
+            short_response = " ".join(response_text.split(".")[:5]) + "."
+            return jsonify(
+                {
+                    "response1": short_response,
+                    "note": "As I am an AI, I can be wrong and you should always check trusted and well-known sources.",
+                }
+            )
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
