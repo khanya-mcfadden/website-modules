@@ -38,6 +38,6 @@ def get_weather_data():
 
 
 
-# possibly use https://open-meteo.com/en/features#available-apis instead of weatherapi.com
+# possibly use https://open-meteo.com/en/features#available-apis or https://openweathermap.org/ instead of weatherapi.com
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")
