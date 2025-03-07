@@ -4,7 +4,7 @@ from flask import (
     jsonify,
     render_template,
 )
-import google.generativeai as genai
+
 
 
 app = Flask(__name__)
